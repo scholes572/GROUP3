@@ -4,858 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SolaraForge | Powering South Africa's Future</title>
+    <meta name="description" content="SolaraForge provides smart solar solutions to eliminate load shedding in South Africa. Reliable, affordable solar power systems for homes and businesses.">
+    <meta name="keywords" content="solar power, South Africa, load shedding, solar panels, renewable energy, battery storage">
+    <meta name="author" content="SolaraForge">
+    <meta property="og:title" content="SolaraForge | Powering South Africa's Future">
+    <meta property="og:description" content="Smart solar solutions that overpower load shedding. Founded 2025, built for tomorrow.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://solarforge.co.za/">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --solar-orange: #FF6B35;
-            --solar-yellow: #F7931E;
-            --deep-space: #0A0E27;
-            --nebula-blue: #1E3A8A;
-            --starlight: #F8FAFC;
-            --solara-gold: #FFD700;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--deep-space);
-            color: var(--starlight);
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 14, 39, 0.9);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--solar-orange), var(--solara-gold));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 2s infinite;
-            box-shadow: 0 0 30px rgba(255, 107, 53, 0.5);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 107, 53, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 107, 53, 0.8); }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--starlight);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-            display: block;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--solar-orange);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--starlight);
-            transition: all 0.3s;
-        }
-
-        /* Hero Section - Team Animation */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 5% 50px;
-            position: relative;
-        }
-
-        .team-orbit {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-            margin-bottom: 3rem;
-        }
-
-        .sun-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, var(--solara-gold), var(--solar-orange));
-            border-radius: 50%;
-            box-shadow: 0 0 100px rgba(255, 215, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-align: center;
-            z-index: 10;
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .team-member {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--nebula-blue), var(--solar-orange));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 3px solid var(--solara-gold);
-        }
-
-        .team-member:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
-        }
-
-        .member-1 { top: 10%; left: 50%; transform: translateX(-50%); animation: float 3s ease-in-out infinite; }
-        .member-2 { top: 30%; right: 10%; animation: float 3s ease-in-out infinite 0.5s; }
-        .member-3 { bottom: 30%; right: 10%; animation: float 3s ease-in-out infinite 1s; }
-        .member-4 { bottom: 10%; left: 50%; transform: translateX(-50%); animation: float 3s ease-in-out infinite 1.5s; }
-        .member-5 { bottom: 30%; left: 10%; animation: float 3s ease-in-out infinite 2s; }
-        .member-6 { top: 30%; left: 10%; animation: float 3s ease-in-out infinite 2.5s; }
-        .member-7 { top: 50%; right: 5%; transform: translateY(-50%); animation: float 3s ease-in-out infinite 0.3s; }
-        .member-8 { top: 10%; left: 20%; animation: float 3s ease-in-out infinite 0.8s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .member-1 { animation: orbit1 20s linear infinite; }
-        .member-2 { animation: orbit2 20s linear infinite; }
-        .member-3 { animation: orbit3 20s linear infinite; }
-        .member-4 { animation: orbit4 20s linear infinite; }
-        .member-5 { animation: orbit5 20s linear infinite; }
-        .member-6 { animation: orbit6 20s linear infinite; }
-        .member-7 { animation: orbit7 20s linear infinite; }
-        .member-8 { animation: orbit8 20s linear infinite; }
-
-        @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(200px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); } }
-        @keyframes orbit2 { 0% { transform: rotate(51deg) translateX(200px) rotate(-51deg); } 100% { transform: rotate(411deg) translateX(200px) rotate(-411deg); } }
-        @keyframes orbit3 { 0% { transform: rotate(102deg) translateX(200px) rotate(-102deg); } 100% { transform: rotate(462deg) translateX(200px) rotate(-462deg); } }
-        @keyframes orbit4 { 0% { transform: rotate(154deg) translateX(200px) rotate(-154deg); } 100% { transform: rotate(514deg) translateX(200px) rotate(-514deg); } }
-        @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(200px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(200px) rotate(-565deg); } }
-        @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(200px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(200px) rotate(-617deg); } }
-        @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(200px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(200px) rotate(-668deg); } }
-        @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(200px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(200px) rotate(-720deg); } }
-
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--starlight), var(--solara-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { filter: brightness(1); }
-            50% { filter: brightness(1.3); }
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--solar-orange), var(--solar-yellow));
-            color: var(--deep-space);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-family: 'Space Grotesk', sans-serif;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--solar-orange), var(--solara-gold));
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--solar-orange);
-            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-        }
-
-        .info-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--solara-gold);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        /* Supply Chain Section */
-        .supply-chain {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(255, 107, 53, 0.1));
-            border-radius: 30px;
-            padding: 3rem;
-            margin: 3rem 0;
-        }
-
-        .chain-flow {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .chain-step {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            min-width: 150px;
-            position: relative;
-            transition: all 0.3s;
-            touch-action: manipulation;
-        }
-
-        @media (pointer: coarse) {
-            .chain-step,
-            .location-card,
-            .info-card,
-            .team-member,
-            .cta-button {
-                min-height: 44px;
-                min-width: 44px;
-            }
-        }
-
-        .chain-step:hover {
-            background: rgba(255, 107, 53, 0.2);
-            transform: scale(1.05);
-        }
-
-        .chain-step::after {
-            content: '→';
-            position: absolute;
-            right: -25px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: var(--solar-orange);
-        }
-
-        .chain-step:last-child::after {
-            display: none;
-        }
-
-        /* Locations Section */
-        .locations-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .location-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            overflow: hidden;
-            border: 2px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .location-card:hover {
-            border-color: var(--solar-orange);
-            transform: scale(1.02);
-        }
-
-        .location-header {
-            background: linear-gradient(135deg, var(--nebula-blue), var(--solar-orange));
-            padding: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .location-body {
-            padding: 2rem;
-        }
-
-        .location-body ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .location-body li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .location-body li::before {
-            content: '☀';
-            position: absolute;
-            left: 0;
-            color: var(--solara-gold);
-        }
-
-        /* Stats Counter */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .stat-number {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--solara-gold);
-            display: block;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 3rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 5%;
-            }
-
-            .logo {
-                font-size: 1.25rem;
-            }
-
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--deep-space);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .mobile-menu span {
-                width: 24px;
-                height: 2px;
-            }
-
-            .team-orbit {
-                height: 280px;
-                max-width: 320px;
-            }
-
-            .team-member {
-                width: 55px;
-                height: 55px;
-                font-size: 0.55rem;
-            }
-
-            @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(100px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); } }
-            @keyframes orbit2 { 0% { transform: rotate(51deg) translateX(100px) rotate(-51deg); } 100% { transform: rotate(411deg) translateX(100px) rotate(-411deg); } }
-            @keyframes orbit3 { 0% { transform: rotate(102deg) translateX(100px) rotate(-102deg); } 100% { transform: rotate(462deg) translateX(100px) rotate(-462deg); } }
-            @keyframes orbit4 { 0% { transform: rotate(154deg) translateX(100px) rotate(-154deg); } 100% { transform: rotate(514deg) translateX(100px) rotate(-514deg); } }
-            @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(100px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(100px) rotate(-565deg); } }
-            @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(100px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(100px) rotate(-617deg); } }
-            @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(100px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(100px) rotate(-668deg); } }
-            @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(100px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(100px) rotate(-720deg); } }
-
-            .sun-center {
-                width: 70px;
-                height: 70px;
-                font-size: 0.6rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 0.875rem 1.75rem;
-                font-size: 0.9rem;
-            }
-
-            section {
-                padding: 60px 5%;
-            }
-
-            .supply-chain {
-                padding: 1.5rem;
-            }
-
-            .chain-flow {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .chain-step {
-                width: 100%;
-                min-width: unset;
-            }
-
-            .chain-step::after {
-                content: '↓';
-                right: 50%;
-                top: 100%;
-                transform: translateX(50%);
-            }
-
-            .locations-container {
-                grid-template-columns: 1fr;
-            }
-
-            .info-card {
-                padding: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .stat-item {
-                padding: 1.25rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav {
-                padding: 0.875rem 5%;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-                gap: 0.5rem;
-            }
-
-            .logo-icon {
-                width: 36px;
-                height: 36px;
-            }
-
-.mobile-menu span {
-                width: 20px;
-            }
-
-            .nav-links {
-                padding: 1.5rem;
-            }
-
-            .team-orbit {
-                height: 240px;
-                max-width: 280px;
-            }
-
-            .team-member {
-                width: 48px;
-                height: 48px;
-            }
-
-            @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(85px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(85px) rotate(-360deg); } }
-            @keyframes orbit2 { 0% { transform: rotate(51deg) translateX(85px) rotate(-51deg); } 100% { transform: rotate(411deg) translateX(85px) rotate(-411deg); } }
-            @keyframes orbit3 { 0% { transform: rotate(102deg) translateX(85px) rotate(-102deg); } 100% { transform: rotate(462deg) translateX(85px) rotate(-462deg); } }
-            @keyframes orbit4 { 0% { transform: rotate(154deg) translateX(85px) rotate(-154deg); } 100% { transform: rotate(514deg) translateX(85px) rotate(-514deg); } }
-            @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(85px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(85px) rotate(-565deg); } }
-            @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(85px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(85px) rotate(-617deg); } }
-            @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(85px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(85px) rotate(-668deg); } }
-            @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(85px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(85px) rotate(-720deg); } }
-
-            .sun-center {
-                width: 60px;
-                height: 60px;
-                font-size: 0.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
-            }
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Stars Background -->
-    <div class="stars" id="stars"></div>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="stars" id="stars" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <div class="logo-icon">☀</div>
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            <div class="logo-icon" aria-hidden="true">☀</div>
             <span>SolaraForge</span>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#supply">Supply Chain</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#team">Team</a></li>
+        </a>
+        <ul class="nav-links" id="navLinks" role="menubar">
+            <li role="none"><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
+            <li role="none"><a href="about.html" role="menuitem">About</a></li>
+            <li role="none"><a href="solutions.html" role="menuitem">Solutions</a></li>
+            <li role="none"><a href="locations.html" role="menuitem">Locations</a></li>
+            <li role="none"><a href="team.html" role="menuitem">Team</a></li>
+            <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
         </ul>
-        <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
     </nav>
 
-    <!-- Hero Section with Team Animation -->
-    <section class="hero" id="home">
-        <div class="team-orbit">
-            <div class="sun-center">Solara<br>Forge</div>
-            <div class="team-member member-1">Clement</div>
-            <div class="team-member member-2">Scholes</div>
-            <div class="team-member member-3">Sajeda</div>
-            <div class="team-member member-4">Abdullah</div>
-            <div class="team-member member-5">Oscar</div>
-            <div class="team-member member-6">Banz</div>
-            <div class="team-member member-7">Roba</div>
-            <div class="team-member member-8">Manha</div>
-        </div>
-        <div class="hero-content">
-            <h1>Powering South Africa's Future</h1>
-            <p>Smart solar solutions that overpower load shedding. Founded 2025, built for tomorrow.</p>
-            <a href="#about" class="cta-button">Discover Our Story</a>
-        </div>
-    </section>
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="team-orbit" role="img" aria-label="Team members orbiting around SolaraForge logo">
+                <div class="sun-center" aria-label="SolaraForge Logo">Solara<br>Forge</div>
+                <div class="team-member member-1" tabindex="0">Clement</div>
+                <div class="team-member member-2" tabindex="0">Scholes</div>
+                <div class="team-member member-3" tabindex="0">Sajeda</div>
+                <div class="team-member member-4" tabindex="0">Abdullah</div>
+                <div class="team-member member-5" tabindex="0">Oscar</div>
+                <div class="team-member member-6" tabindex="0">Banz</div>
+                <div class="team-member member-7" tabindex="0">Roba</div>
+                <div class="team-member member-8" tabindex="0">Manha</div>
+            </div>
+            <div class="hero-content">
+                <h1>Powering South Africa's Future</h1>
+                <p>Smart solar solutions that overpower load shedding. Founded 2025, built for tomorrow.</p>
+                <a href="about.html" class="cta-button">Discover Our Story</a>
+            </div>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-        <h2>About SolaraForge</h2>
-        <div class="about-grid">
-            <div class="info-card">
-                <h3>☀ Our Name</h3>
-                <p>Named after <strong>Solara</strong>, representing the power of the sun. We bring sustainable solar energy to South African homes and businesses.</p>
+        <section id="about" class="fade-in">
+            <h2>About SolaraForge</h2>
+            <div class="about-grid">
+                <div class="info-card">
+                    <h3>☀ Our Name</h3>
+                    <p><strong>SolaraForge</strong> combines "Solar" (our energy source) with "Forge" (creation through fire and intensity). We're forging a new energy future for South Africa.</p>
+                </div>
+                <div class="info-card">
+                    <h3>⚡ The Problem</h3>
+                    <p>South Africa faces daily <strong>load shedding</strong>, rising electricity prices, and environmental damage from coal-based power generation.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌱 Our Solution</h3>
+                    <p>Reliable, affordable, and smart solar power systems that keep the lights on when the grid goes down.</p>
+                </div>
+                <div class="info-card">
+                    <h3>👥 Who We Serve</h3>
+                    <p>From families in suburban homes to big industrial companies — anyone tired of sitting in the dark.</p>
+                </div>
             </div>
-            <div class="info-card">
-                <h3>⚡ The Problem</h3>
-                <p>South Africa faces daily <strong>load shedding</strong>, rising electricity prices, and environmental damage from coal-based power generation.</p>
-            </div>
-            <div class="info-card">
-                <h3>🌱 Our Solution</h3>
-                <p>Reliable, affordable, and smart solar power systems that keep the lights on when the grid goes down.</p>
-            </div>
-            <div class="info-card">
-                <h3>👥 Who We Serve</h3>
-                <p>From families in suburban homes to big industrial companies — anyone tired of sitting in the dark.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Supply Chain Section -->
-    <section id="supply" class="fade-in">
-        <h2>How We Source: From China to South Africa</h2>
-        <div class="supply-chain">
-            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
-                Our solar panels and smart technology components are sourced from leading manufacturers in China, 
-                assembled and distributed across South Africa.
+        <section id="supply" class="fade-in">
+            <h2>How We Source: From China to South Africa</h2>
+            <div class="supply-chain">
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                    Our solar panels and smart technology components are sourced from leading manufacturers in China, 
+                    assembled and distributed across South Africa.
+                </p>
+                <div class="chain-flow">
+                    <div class="chain-step">
+                        <strong>🏭 China</strong><br>
+                        <small>Shanghai/Shenzhen<br>Panel Manufacturing<br>Quality Testing</small>
+                    </div>
+                    <div class="chain-step">
+                        <strong>🚢 Port of Durban</strong><br>
+                        <small>Sea Freight<br>Customs Clearance<br>Import Handling</small>
+                    </div>
+                    <div class="chain-step">
+                        <strong>🏭 Northern Cape</strong><br>
+                        <small>Assembly Facility<br>Quality Control<br>Storage</small>
+                    </div>
+                    <div class="chain-step">
+                        <strong>📍 Nationwide</strong><br>
+                        <small>Installation Teams<br>Maintenance<br>Support</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="fade-in">
+            <h2>Our Strategic Locations</h2>
+            <div class="locations-container">
+                <div class="location-card">
+                    <div class="location-header">🏭 Manufacturing Hub</div>
+                    <div class="location-body">
+                        <h3>Upington, Northern Cape</h3>
+                        <ul>
+                            <li>2,500+ hours of annual sunshine</li>
+                            <li>Cheapest land in South Africa</li>
+                            <li>REIPPPP government incentives</li>
+                            <li>Existing solar industry workforce</li>
+                            <li>Direct grid connection infrastructure</li>
+                            <li>Expansion room for growth</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-header">🏢 Headquarters</div>
+                    <div class="location-body">
+                        <h3>Johannesburg, Gauteng</h3>
+                        <ul>
+                            <li>Close to major customers</li>
+                            <li>Economic hub of South Africa</li>
+                            <li>Skilled sales & technical talent</li>
+                            <li>OR Tambo Airport logistics</li>
+                            <li>Installation team dispatch center</li>
+                            <li>Nationwide distribution network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2500">0</span>
+                    <p>Sun Hours/Year</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="2025">0</span>
+                    <p>Year Founded</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">0</span>
+                    <p>Team Members</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <p>% Solar Powered</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="fade-in">
+            <h2>The Minds Behind SolaraForge</h2>
+            <div class="about-grid">
+                <div class="info-card">
+                    <h3>🎯 Team A: The Company (5)</h3>
+                    <p>Led by <strong>Clement</strong>, covering products, services, marketing, and company operations.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Team B: The Where (4)</h3>
+                    <p>Led by <strong>Scholes</strong>, analyzing strategic locations, supply chain, and expansion planning.</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 3rem; font-size: 1.2rem; color: var(--solara-gold);">
+                "More minds are better than one" — Group 7, 2026
             </p>
-            <div class="chain-flow">
-                <div class="chain-step">
-                    <strong>🏭 China</strong><br>
-                    <small>Shanghai/Shenzhen<br>Panel Manufacturing<br>Quality Testing</small>
-                </div>
-                <div class="chain-step">
-                    <strong>🚢 Port of Durban</strong><br>
-                    <small>Sea Freight<br>Customs Clearance<br>Import Handling</small>
-                </div>
-                <div class="chain-step">
-                    <strong>🏭 Northern Cape</strong><br>
-                    <small>Assembly Facility<br>Quality Control<br>Storage</small>
-                </div>
-                <div class="chain-step">
-                    <strong>📍 Nationwide</strong><br>
-                    <small>Installation Teams<br>Maintenance<br>Support</small>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Locations Section -->
-    <section id="locations" class="fade-in">
-        <h2>Our Strategic Locations</h2>
-        <div class="locations-container">
-            <div class="location-card">
-                <div class="location-header">🏭 Manufacturing Hub</div>
-                <div class="location-body">
-                    <h3>Upington, Northern Cape</h3>
-                    <ul>
-                        <li>2,500+ hours of annual sunshine</li>
-                        <li>Cheapest land in South Africa</li>
-                        <li>REIPPPP government incentives</li>
-                        <li>Existing solar industry workforce</li>
-                        <li>Direct grid connection infrastructure</li>
-                        <li>Expansion room for growth</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="location-card">
-                <div class="location-header">🏢 Headquarters</div>
-                <div class="location-body">
-                    <h3>Johannesburg, Gauteng</h3>
-                    <ul>
-                        <li>Close to major customers</li>
-                        <li>Economic hub of South Africa</li>
-                        <li>Skilled sales & technical talent</li>
-                        <li>OR Tambo Airport logistics</li>
-                        <li>Installation team dispatch center</li>
-                        <li>Nationwide distribution network</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <span class="stat-number" data-target="2500">0</span>
-                <p>Sun Hours/Year</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="2025">0</span>
-                <p>Year Founded</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="10">0</span>
-                <p>Team Members</p>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="100">0</span>
-                <p>% Solar Powered</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="fade-in">
-        <h2>The Minds Behind SolaraForge</h2>
-        <div class="about-grid">
-            <div class="info-card">
-                <h3>🎯 Team A: The Company (5)</h3>
-                <p>Led by <strong>Clement</strong>, covering products, services, marketing, and company operations.</p>
-            </div>
-            <div class="info-card">
-                <h3>📍 Team B: The Where (4)</h3>
-                <p>Led by <strong>Scholes</strong>, analyzing strategic locations, supply chain, and expansion planning.</p>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 3rem; font-size: 1.2rem; color: var(--solara-gold);">
-            "More minds are better than one" — Group 7, 2026
-        </p>
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
-                <div class="logo-icon">☀</div>
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <div class="logo-icon" aria-hidden="true">☀</div>
                 <span>SolaraForge</span>
-            </div>
+            </a>
             <p>© 2025-2026 SolaraForge. Powering South Africa's future, one panel at a time.</p>
             <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
                 Built with ☀️ by Clement, Scholes, Sajeda, Abdullah, Oscar, Banz, Roba, Manha & Team
@@ -880,7 +210,17 @@
         const navLinks = document.getElementById('navLinks');
         
         mobileMenu.addEventListener('click', () => {
+            const isExpanded = mobileMenu.getAttribute('aria-expanded') === 'true';
+            mobileMenu.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                mobileMenu.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+            }
         });
 
         // Scroll animations
@@ -934,6 +274,7 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     navLinks.classList.remove('active');
+                    mobileMenu.setAttribute('aria-expanded', 'false');
                 }
             });
         });
@@ -945,6 +286,13 @@
                 setTimeout(() => {
                     this.style.transform = '';
                 }, 300);
+            });
+            
+            member.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
             });
         });
     </script>

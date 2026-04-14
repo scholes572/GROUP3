@@ -1,0 +1,361 @@
+<!-- contact.html - CONTACT PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | SolaraForge</title>
+    <meta name="description" content="Contact SolaraForge for solar solutions. Get a quote for residential or commercial solar installations in South Africa.">
+    <meta name="keywords" content="contact solar company, solar quote South Africa, solar installation enquiry">
+    <meta property="og:title" content="Contact SolaraForge | Get a Quote">
+    <meta property="og:description" content="Ready to power your future? Let's talk. Get in touch for solar solutions tailored to your needs.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://solarforge.co.za/contact.html">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-hero {
+            padding: 150px 5% 80px;
+            text-align: center;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--solar-gold);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--solar-orange);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .info-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--solar-orange);
+        }
+        
+        .info-card h3 {
+            color: var(--solar-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Popup Modal */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-modal {
+            background: linear-gradient(135deg, var(--deep-space) 0%, #1a1f4a 100%);
+            border: 2px solid var(--solar-orange);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 0 60px rgba(255, 107, 53, 0.4);
+            animation: popIn 0.5s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .popup-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--solar-orange), var(--solara-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1.5rem;
+            animation: pulse 1.5s ease infinite;
+        }
+
+        .popup-modal h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--solara-gold);
+            margin-bottom: 1rem;
+        }
+
+        .popup-modal p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .popup-btn {
+            background: linear-gradient(135deg, var(--solar-orange), var(--solar-yellow));
+            color: var(--deep-space);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .popup-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .sun-animation {
+            font-size: 4rem;
+            animation: rotate 3s linear infinite;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            <div class="logo-icon" aria-hidden="true">☀</div>
+            <span>SolaraForge</span>
+        </a>
+        <ul class="nav-links" id="navLinks" role="menubar">
+            <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+            <li role="none"><a href="about.html" role="menuitem">About</a></li>
+            <li role="none"><a href="solutions.html" role="menuitem">Solutions</a></li>
+            <li role="none"><a href="locations.html" role="menuitem">Locations</a></li>
+            <li role="none"><a href="team.html" role="menuitem">Team</a></li>
+            <li role="none"><a href="contact.html" role="menuitem" aria-current="page">Contact</a></li>
+        </ul>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
+    <main id="main-content">
+    <section class="contact-hero">
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2rem,5vw,3.5rem);">Get in Touch</h1>
+        <p>Ready to power your future? Let's talk.</p>
+    </section>
+    
+    <section class="contact-container">
+        <div class="contact-form">
+            <h2 style="font-family:'Space Grotesk',sans-serif; margin-bottom:2rem;">Request a Quote</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+27 XX XXX XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="solution">Solution Interest</label>
+                    <select>
+                        <option>Home Solar System</option>
+                        <option>Business Solution</option>
+                        <option>Battery Upgrade</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your energy needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">
+                    Send Request →
+                </button>
+            </form>
+        </div>
+        
+        <div class="contact-info">
+            <div class="info-card">
+                <h3>📍 Headquarters</h3>
+                <p>Johannesburg, Gauteng<br>South Africa</p>
+                <p style="margin-top:1rem; color:var(--solar-gold);">Near major customers & OR Tambo Airport</p>
+            </div>
+            <div class="info-card">
+                <h3>🏭 Manufacturing</h3>
+                <p>Upington, Northern Cape<br>South Africa</p>
+                <p style="margin-top:1rem; color:var(--solar-gold);">2,500+ sun hours annually</p>
+            </div>
+            <div class="info-card">
+                <h3>📧 Email</h3>
+                <p>info@solarforge.co.za<br>sales@solarforge.co.za</p>
+            </div>
+            <div class="info-card">
+                <h3>📱 Social</h3>
+                <p>Instagram: @solarforge<br>Facebook: SolaraForge<br>LinkedIn: SolaraForge SA</p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-modal">
+            <div class="popup-icon">☀️</div>
+            <h3>Request Submitted!</h3>
+            <p>Thank you for reaching out! Our team will contact you within 24 hours to discuss your solar solution.</p>
+            <button class="popup-btn" onclick="closePopup()">Got it!</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <div class="logo-icon" aria-hidden="true">☀</div>
+                <span>SolaraForge</span>
+            </a>
+            <p>© 2025-2026 SolaraForge. Powering South Africa's future, one panel at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            const isExpanded = mobileMenu.getAttribute('aria-expanded') === 'true';
+            mobileMenu.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                mobileMenu.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Contact form popup
+        const contactForm = document.getElementById('contactForm');
+        const popupOverlay = document.getElementById('popupOverlay');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data (for potential future use)
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            
+            // Show popup
+            popupOverlay.classList.add('active');
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+        }
+
+        // Close popup when clicking outside
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+
+        // Close popup with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

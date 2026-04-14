@@ -1,0 +1,255 @@
+<!-- locations.html - LOCATIONS PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Locations | SolaraForge</title>
+    <meta name="description" content="Discover SolaraForge's strategic locations - Manufacturing Hub in Upington, Northern Cape and Headquarters in Johannesburg, Gauteng.">
+    <meta name="keywords" content="solar manufacturing South Africa, solar company locations, Upington solar, Johannesburg headquarters">
+    <meta property="og:title" content="Our Locations | SolaraForge">
+    <meta property="og:description" content="From China's factories to South Africa's sunniest desert to your doorstep. Discover our supply chain and locations.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://solarforge.co.za/locations.html">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .locations-hero {
+            padding: 150px 5% 80px;
+            text-align: center;
+        }
+        
+        .map-container {
+            padding: 40px 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .location-detail {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .location-detail:hover {
+            border-color: var(--solar-orange);
+            transform: translateY(-10px);
+        }
+        
+        .location-detail.northern-cape {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1) 0%, rgba(255,215,0,0.05) 100%);
+        }
+        
+        .location-detail.gauteng {
+            background: linear-gradient(135deg, rgba(30,58,138,0.2) 0%, rgba(255,107,53,0.1) 100%);
+        }
+        
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .location-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .supply-chain-viz {
+            padding: 60px 5%;
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .chain-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .chain-step {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            min-width: 180px;
+            position: relative;
+        }
+        
+        .chain-step::after {
+            content: '→';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: var(--solar-orange);
+        }
+        
+        .chain-step:last-child::after {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .map-container {
+                grid-template-columns: 1fr;
+            }
+            .chain-step::after {
+                content: '↓';
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo">
+            <div class="logo-icon" aria-hidden="true">☀</div>
+            <span>SolaraForge</span>
+        </a>
+        <ul class="nav-links" id="navLinks" role="menubar">
+            <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+            <li role="none"><a href="about.html" role="menuitem">About</a></li>
+            <li role="none"><a href="solutions.html" role="menuitem">Solutions</a></li>
+            <li role="none"><a href="locations.html" role="menuitem" aria-current="page">Locations</a></li>
+            <li role="none"><a href="team.html" role="menuitem">Team</a></li>
+            <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+        </ul>
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+    
+    <main id="main-content">
+    <section class="locations-hero">
+        <h1 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2rem,5vw,3.5rem);">Strategic Locations</h1>
+        <p>From China's factories to South Africa's sunniest desert to your doorstep.</p>
+    </section>
+    
+    <section class="map-container">
+        <div class="location-detail northern-cape">
+            <div class="location-header">
+                <div class="location-icon">🏭</div>
+                <div>
+                    <h2>Manufacturing Hub</h2>
+                    <p style="color:var(--solar-gold); font-weight:600;">Upington, Northern Cape</p>
+                </div>
+            </div>
+            <ul style="list-style:none; line-height:2;">
+                <li>☀️ <strong>2,500+ sun hours/year</strong> - highest in SA</li>
+                <li>🏜️ Flat, vast land for solar farms</li>
+                <li>💰 Cheapest land prices in South Africa</li>
+                <li>⚡ REIPPPP government incentives</li>
+                <li>🔌 Direct grid infrastructure</li>
+                <li>📦 Close to shipping routes</li>
+            </ul>
+        </div>
+        
+        <div class="location-detail gauteng">
+            <div class="location-header">
+                <div class="location-icon">🏢</div>
+                <div>
+                    <h2>Headquarters</h2>
+                    <p style="color:var(--solar-gold); font-weight:600;">Johannesburg, Gauteng</p>
+                </div>
+            </div>
+            <ul style="list-style:none; line-height:2;">
+                <li>👥 Close to major customers</li>
+                <li>✈️ OR Tambo Airport logistics</li>
+                <li>💼 Economic hub of South Africa</li>
+                <li>🎓 Access to skilled workforce</li>
+                <li>🚛 Installation team dispatch center</li>
+                <li>📱 Marketing & sales operations</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="supply-chain-viz">
+        <h2 style="text-align:center; font-family:'Space Grotesk',sans-serif; margin-bottom:1rem;">Global Supply Chain</h2>
+        <p style="text-align:center; color:rgba(255,255,255,0.7);">From Shanghai to your home</p>
+        
+        <div class="chain-flow">
+            <div class="chain-step">
+                <div style="font-size:2rem; margin-bottom:0.5rem;">🇨🇳</div>
+                <h4>China</h4>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Shanghai/Shenzhen<br>Panel Manufacturing<br>Quality Testing</p>
+            </div>
+            <div class="chain-step">
+                <div style="font-size:2rem; margin-bottom:0.5rem;">🚢</div>
+                <h4>Port of Durban</h4>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Sea Freight<br>Customs Clearance<br>Import Handling</p>
+            </div>
+            <div class="chain-step">
+                <div style="font-size:2rem; margin-bottom:0.5rem;">🏭</div>
+                <h4>Upington</h4>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Assembly Facility<br>Quality Control<br>Storage</p>
+            </div>
+            <div class="chain-step">
+                <div style="font-size:2rem; margin-bottom:0.5rem;">🏠</div>
+                <h4>Nationwide</h4>
+                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Installation Teams<br>Maintenance<br>Support</p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 1rem;">
+                <div class="logo-icon" aria-hidden="true">☀</div>
+                <span>SolaraForge</span>
+            </a>
+            <p>© 2025-2026 SolaraForge. Powering South Africa's future, one panel at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            const isExpanded = mobileMenu.getAttribute('aria-expanded') === 'true';
+            mobileMenu.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                mobileMenu.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
