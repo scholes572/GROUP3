@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeliosForge | Powering South Africa's Future</title>
+    <title>SolaraForge | Powering South Africa's Future</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,7 +12,7 @@
             --deep-space: #0A0E27;
             --nebula-blue: #1E3A8A;
             --starlight: #F8FAFC;
-            --helio-gold: #FFD700;
+            --solara-gold: #FFD700;
         }
 
         * {
@@ -84,7 +84,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, var(--solar-orange), var(--helio-gold));
+            background: linear-gradient(135deg, var(--solar-orange), var(--solara-gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -169,7 +169,7 @@
             transform: translate(-50%, -50%);
             width: 120px;
             height: 120px;
-            background: radial-gradient(circle, var(--helio-gold), var(--solar-orange));
+            background: radial-gradient(circle, var(--solara-gold), var(--solar-orange));
             border-radius: 50%;
             box-shadow: 0 0 100px rgba(255, 215, 0, 0.6);
             display: flex;
@@ -204,7 +204,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             transition: all 0.3s;
-            border: 3px solid var(--helio-gold);
+            border: 3px solid var(--solara-gold);
         }
 
         .team-member:hover {
@@ -219,6 +219,7 @@
         .member-5 { bottom: 30%; left: 10%; animation: float 3s ease-in-out infinite 2s; }
         .member-6 { top: 30%; left: 10%; animation: float 3s ease-in-out infinite 2.5s; }
         .member-7 { top: 50%; right: 5%; transform: translateY(-50%); animation: float 3s ease-in-out infinite 0.3s; }
+        .member-8 { top: 10%; left: 20%; animation: float 3s ease-in-out infinite 0.8s; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -232,6 +233,7 @@
         .member-5 { animation: orbit5 20s linear infinite; }
         .member-6 { animation: orbit6 20s linear infinite; }
         .member-7 { animation: orbit7 20s linear infinite; }
+        .member-8 { animation: orbit8 20s linear infinite; }
 
         @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(200px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); } }
         @keyframes orbit2 { 0% { transform: rotate(51deg) translateX(200px) rotate(-51deg); } 100% { transform: rotate(411deg) translateX(200px) rotate(-411deg); } }
@@ -240,6 +242,7 @@
         @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(200px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(200px) rotate(-565deg); } }
         @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(200px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(200px) rotate(-617deg); } }
         @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(200px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(200px) rotate(-668deg); } }
+        @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(200px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(200px) rotate(-720deg); } }
 
         .hero-content {
             text-align: center;
@@ -251,7 +254,7 @@
             font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--starlight), var(--helio-gold));
+            background: linear-gradient(135deg, var(--starlight), var(--solara-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: glow 3s ease-in-out infinite;
@@ -309,7 +312,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: linear-gradient(90deg, var(--solar-orange), var(--helio-gold));
+            background: linear-gradient(90deg, var(--solar-orange), var(--solara-gold));
             border-radius: 2px;
         }
 
@@ -338,7 +341,7 @@
 
         .info-card h3 {
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--helio-gold);
+            color: var(--solara-gold);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
@@ -449,7 +452,7 @@
             content: '☀';
             position: absolute;
             left: 0;
-            color: var(--helio-gold);
+            color: var(--solara-gold);
         }
 
         /* Stats Counter */
@@ -472,7 +475,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 3rem;
             font-weight: 700;
-            color: var(--helio-gold);
+            color: var(--solara-gold);
             display: block;
         }
 
@@ -548,6 +551,7 @@
             @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(100px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(100px) rotate(-565deg); } }
             @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(100px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(100px) rotate(-617deg); } }
             @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(100px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(100px) rotate(-668deg); } }
+            @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(100px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(100px) rotate(-720deg); } }
 
             .sun-center {
                 width: 70px;
@@ -646,6 +650,7 @@
             @keyframes orbit5 { 0% { transform: rotate(205deg) translateX(85px) rotate(-205deg); } 100% { transform: rotate(565deg) translateX(85px) rotate(-565deg); } }
             @keyframes orbit6 { 0% { transform: rotate(257deg) translateX(85px) rotate(-257deg); } 100% { transform: rotate(617deg) translateX(85px) rotate(-617deg); } }
             @keyframes orbit7 { 0% { transform: rotate(308deg) translateX(85px) rotate(-308deg); } 100% { transform: rotate(668deg) translateX(85px) rotate(-668deg); } }
+            @keyframes orbit8 { 0% { transform: rotate(360deg) translateX(85px) rotate(-360deg); } 100% { transform: rotate(720deg) translateX(85px) rotate(-720deg); } }
 
             .sun-center {
                 width: 60px;
@@ -684,7 +689,7 @@
     <nav>
         <div class="logo">
             <div class="logo-icon">☀</div>
-            <span>HeliosForge</span>
+            <span>SolaraForge</span>
         </div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Home</a></li>
@@ -703,7 +708,7 @@
     <!-- Hero Section with Team Animation -->
     <section class="hero" id="home">
         <div class="team-orbit">
-            <div class="sun-center">Helios<br>Forge</div>
+            <div class="sun-center">Solara<br>Forge</div>
             <div class="team-member member-1">Clement</div>
             <div class="team-member member-2">Scholes</div>
             <div class="team-member member-3">Sajeda</div>
@@ -711,6 +716,7 @@
             <div class="team-member member-5">Oscar</div>
             <div class="team-member member-6">Banz</div>
             <div class="team-member member-7">Roba</div>
+            <div class="team-member member-8">Manha</div>
         </div>
         <div class="hero-content">
             <h1>Powering South Africa's Future</h1>
@@ -721,11 +727,11 @@
 
     <!-- About Section -->
     <section id="about" class="fade-in">
-        <h2>About HeliosForge</h2>
+        <h2>About SolaraForge</h2>
         <div class="about-grid">
             <div class="info-card">
                 <h3>☀ Our Name</h3>
-                <p>Named after <strong>Helios</strong>, the Ancient Greek god of the Sun. We bring the power of the sun to South African homes and businesses.</p>
+                <p>Named after <strong>Solara</strong>, representing the power of the sun. We bring sustainable solar energy to South African homes and businesses.</p>
             </div>
             <div class="info-card">
                 <h3>⚡ The Problem</h3>
@@ -815,7 +821,7 @@
                 <p>Year Founded</p>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="9">0</span>
+                <span class="stat-number" data-target="10">0</span>
                 <p>Team Members</p>
             </div>
             <div class="stat-item">
@@ -827,7 +833,7 @@
 
     <!-- Team Section -->
     <section id="team" class="fade-in">
-        <h2>The Minds Behind HeliosForge</h2>
+        <h2>The Minds Behind SolaraForge</h2>
         <div class="about-grid">
             <div class="info-card">
                 <h3>🎯 Team A: The Company (5)</h3>
@@ -838,7 +844,7 @@
                 <p>Led by <strong>Scholes</strong>, analyzing strategic locations, supply chain, and expansion planning.</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 3rem; font-size: 1.2rem; color: var(--helio-gold);">
+        <p style="text-align: center; margin-top: 3rem; font-size: 1.2rem; color: var(--solara-gold);">
             "More minds are better than one" — Group 7, 2026
         </p>
     </section>
@@ -848,11 +854,11 @@
         <div class="footer-content">
             <div class="logo" style="justify-content: center; margin-bottom: 1rem;">
                 <div class="logo-icon">☀</div>
-                <span>HeliosForge</span>
+                <span>SolaraForge</span>
             </div>
-            <p>© 2025-2026 HeliosForge. Powering South Africa's future, one panel at a time.</p>
+            <p>© 2025-2026 SolaraForge. Powering South Africa's future, one panel at a time.</p>
             <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
-                Built with ☀️ by Clement, Scholes, Sajeda, Abdullah, Oscar, Banz, Roba & Team
+                Built with ☀️ by Clement, Scholes, Sajeda, Abdullah, Oscar, Banz, Roba, Manha & Team
             </p>
         </div>
     </footer>
