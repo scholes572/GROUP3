@@ -33,7 +33,7 @@ export function SupplyChain() {
     <div className="relative py-12">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
         {/* Connection Line */}
-        <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-amber-500/0 via-amber-500/50 to-amber-500/0"></div>
+        <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-amber-500/30"></div>
 
         {supplyChainSteps.map((step, index) => (
           <motion.div
@@ -52,7 +52,7 @@ export function SupplyChain() {
 
               {/* Icon */}
               <div className="mb-4 relative">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-amber-500/20 to-amber-700/20 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto bg-amber-500/20 rounded-full flex items-center justify-center">
                   <step.icon className="w-8 h-8 text-amber-400" />
                 </div>
               </div>

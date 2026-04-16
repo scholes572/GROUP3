@@ -13,7 +13,7 @@ export function Locations() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-500">
             Our Locations
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -174,13 +174,13 @@ export function Locations() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-500/10 to-amber-700/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12 mb-20"
+          className="bg-amber-500/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12 mb-20"
         >
           <h2 className="text-3xl font-bold text-center text-amber-400 mb-8">Our Supply Chain Network</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Factory className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-amber-400 mb-2">Shanghai/Shenzhen</h3>
@@ -188,7 +188,7 @@ export function Locations() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-amber-400 mb-2">Port of Durban</h3>
@@ -196,7 +196,7 @@ export function Locations() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-amber-400 mb-2">Upington Facility</h3>
@@ -204,7 +204,7 @@ export function Locations() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sun className="w-8 h-8 text-white" />
               </div>
               <h3 className="font-semibold text-amber-400 mb-2">Nationwide</h3>

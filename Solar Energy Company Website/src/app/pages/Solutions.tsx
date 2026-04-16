@@ -31,7 +31,7 @@ export function Solutions() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-500">
             Solar Solutions
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -197,7 +197,7 @@ export function Solutions() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-500/10 to-amber-700/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
+          className="bg-amber-500/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
         >
           <h2 className="text-3xl font-bold text-center text-amber-400 mb-12">How It Works</h2>
           

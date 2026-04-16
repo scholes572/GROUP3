@@ -36,7 +36,7 @@ export function Layout() {
                 <div className="absolute inset-0 bg-amber-500/30 blur-xl rounded-full group-hover:bg-amber-500/50 transition-all"></div>
               </div>
               <div>
-                <div className="font-bold text-2xl bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+                <div className="font-bold text-2xl text-amber-500">
                   SolaraForge
                 </div>
                 <div className="text-xs text-amber-500/70">Smart Solar Solutions</div>
@@ -107,7 +107,7 @@ export function Layout() {
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <Sun className="w-8 h-8 text-amber-500" />
-                <span className="font-bold text-xl bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+                <span className="font-bold text-xl text-amber-500">
                   SolaraForge
                 </span>
               </div>
@@ -115,7 +115,7 @@ export function Layout() {
                 Empowering South Africa with smart solar solutions. Addressing load shedding
                 and power challenges through innovative renewable energy technology.
               </p>
-              <p className="text-sm text-gray-500">© 2025 SolaraForge. All rights reserved.</p>
+              <p className="text-sm text-gray-500">© 2026 SolaraForge. All rights reserved.</p>
             </div>
 
             <div>

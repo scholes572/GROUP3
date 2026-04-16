@@ -18,7 +18,7 @@ export function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-amber-300 via-amber-500 to-amber-700 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-amber-500">
               Power Your Future with Solar
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -27,7 +27,7 @@ export function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Link
                 to="/solutions"
-                className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-amber-500 rounded-lg font-semibold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2"
               >
                 Explore Solutions <ArrowRight className="w-5 h-5" />
               </Link>
@@ -65,8 +65,8 @@ export function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
-              Leading Solar Innovation Since 2025
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-500">
+              Leading Solar Innovation Since 2026
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Based in Johannesburg with state-of-the-art manufacturing in Upington, 
@@ -167,7 +167,7 @@ export function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-500">
               Our Global Supply Chain
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -210,7 +210,7 @@ export function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-500">
               Strategic Locations
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -269,7 +269,7 @@ export function Home() {
           <div className="mt-12 text-center">
             <Link
               to="/locations"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-amber-500/50"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 rounded-lg font-semibold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/50"
             >
               Explore Our Locations <ArrowRight className="w-5 h-5" />
             </Link>
@@ -287,7 +287,7 @@ export function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-500">
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -339,7 +339,7 @@ export function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-500">
               Ready to Go Solar?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
@@ -347,7 +347,7 @@ export function Home() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-10 py-5 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg font-semibold text-lg hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-amber-500/50"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-amber-500 rounded-lg font-semibold text-lg hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/50"
             >
               Get Your Free Quote <Zap className="w-6 h-6" />
             </Link>

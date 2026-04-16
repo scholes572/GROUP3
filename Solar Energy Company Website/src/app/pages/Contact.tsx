@@ -37,7 +37,7 @@ export function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-500">
             Get In Touch
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -156,7 +156,7 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2"
+                  className="w-full px-6 py-4 bg-amber-500 rounded-lg font-semibold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/50 flex items-center justify-center gap-2"
                 >
                   Send Message <Send className="w-5 h-5" />
                 </button>
@@ -269,7 +269,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-500/10 to-amber-700/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12 text-center"
+          className="bg-amber-500/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12 text-center"
         >
           <h2 className="text-3xl font-bold text-amber-400 mb-6">Serving All of South Africa</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">

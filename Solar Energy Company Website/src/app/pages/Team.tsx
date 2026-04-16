@@ -76,7 +76,7 @@ export function Team() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-500">
             Our Team
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -120,8 +120,8 @@ export function Team() {
               className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl overflow-hidden hover:border-amber-500/50 transition-all group"
             >
               {/* Profile Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-amber-500/20 to-amber-700/20 flex items-center justify-center">
-                <div className="w-24 h-24 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-white text-3xl font-bold group-hover:scale-110 transition-transform">
+              <div className="relative h-48 bg-amber-500/20 flex items-center justify-center">
+                <div className="w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center text-white text-3xl font-bold group-hover:scale-110 transition-transform">
                   {member.name.charAt(0)}
                 </div>
               </div>
@@ -156,7 +156,7 @@ export function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-500/10 to-amber-700/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
+          className="bg-amber-500/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
         >
           <h2 className="text-3xl font-bold text-center text-amber-400 mb-8">Our Culture</h2>
           
@@ -200,7 +200,7 @@ export function Team() {
             We're always looking for talented individuals passionate about renewable energy
             and making a difference in South Africa
           </p>
-          <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 rounded-lg font-semibold hover:from-amber-600 hover:to-amber-700 transition-all shadow-lg hover:shadow-amber-500/50">
+          <button className="px-8 py-4 bg-amber-500 rounded-lg font-semibold hover:bg-amber-600 transition-all shadow-lg hover:shadow-amber-500/50">
             View Open Positions
           </button>
         </motion.div>

@@ -13,7 +13,7 @@ export function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-500">
             About SolaraForge
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -31,7 +31,7 @@ export function About() {
           >
             <h2 className="text-3xl font-bold text-amber-400 mb-6">Our Story</h2>
             <p className="text-gray-300 mb-4">
-              Founded in 2025, SolaraForge emerged from a clear vision: to address South Africa's
+              Founded in 2026, SolaraForge emerged from a clear vision: to address South Africa's
               ongoing power challenges with reliable, sustainable solar energy solutions. As load
               shedding continued to impact homes and businesses across the nation, we saw an
               opportunity to make a real difference.
@@ -157,11 +157,11 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-amber-500/10 to-amber-700/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
+          className="bg-amber-500/10 backdrop-blur-sm border border-amber-500/30 rounded-xl p-12"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">2025</div>
+              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2">2026</div>
               <div className="text-gray-300">Founded</div>
             </div>
             <div>

@@ -19,7 +19,7 @@ export function TeamOrbit() {
     <div className="relative w-full h-96 flex items-center justify-center">
       {/* Center Sun/Core */}
       <motion.div
-        className="absolute w-24 h-24 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-2xl z-10"
+        className="absolute w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center shadow-2xl z-10"
         animate={{
           scale: [1, 1.1, 1],
           boxShadow: [
@@ -68,7 +68,7 @@ export function TeamOrbit() {
               }}
               whileHover={{ scale: 1.2 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-amber-500/30 to-amber-700/30 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-amber-400/50 shadow-lg">
+              <div className="w-14 h-14 bg-amber-500/30 backdrop-blur-sm rounded-full flex items-center justify-center border-2 border-amber-400/50 shadow-lg">
                 <motion.div
                   className="text-xs text-amber-200 text-center px-1"
                   animate={{ rotate: -360 }}
