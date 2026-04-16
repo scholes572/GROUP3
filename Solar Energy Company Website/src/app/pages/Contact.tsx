@@ -69,7 +69,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-900/50 border border-amber-500/30 rounded-lg focus:outline-none focus:border-amber-500 text-white placeholder-gray-500"
-                    placeholder="John Doe"
+                    placeholder="Enter your names"
                   />
                 </div>
 
@@ -85,7 +85,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-900/50 border border-amber-500/30 rounded-lg focus:outline-none focus:border-amber-500 text-white placeholder-gray-500"
-                    placeholder="john@example.com"
+                    placeholder="name@gmail.com"
                   />
                 </div>
 
@@ -101,7 +101,7 @@ export function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-gray-900/50 border border-amber-500/30 rounded-lg focus:outline-none focus:border-amber-500 text-white placeholder-gray-500"
-                    placeholder="+27 XX XXX XXXX"
+                    placeholder="+*************"
                   />
                 </div>
 
@@ -183,7 +183,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Phone</h4>
-                    <p className="text-gray-300">+27 XX XXX XXXX</p>
+                    <p className="text-gray-300">+271234567890</p>
                     <p className="text-sm text-gray-400 mt-1">Mon-Fri, 8:00 AM - 5:00 PM SAST</p>
                   </div>
                 </div>
@@ -214,7 +214,7 @@ export function Contact() {
 
             {/* Quick Info */}
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-amber-400 mb-6">Why Contact Us?</h3>
+              <h3 className="text-2xl font-bold text-amber-400 mb-6">Why you should contact us?</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
