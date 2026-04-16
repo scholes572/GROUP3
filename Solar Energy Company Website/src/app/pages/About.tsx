@@ -151,6 +151,64 @@ export function About() {
           </motion.div>
         </div>
 
+        {/* Challenges Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <h2 className="text-3xl font-bold text-center text-amber-400 mb-12">Challenges We Faced</h2>
+          <p className="text-gray-300 text-center max-w-3xl mx-auto mb-12">
+            Building a solar energy company in South Africa comes with unique obstacles. Here's how we overcame them:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Supply Chain Complexities</h3>
+              <p className="text-gray-300">
+                Sourcing premium components from international suppliers required navigating global supply chain disruptions and establishing reliable logistics partnerships through the Port of Durban.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Capital Intensity</h3>
+              <p className="text-gray-300">
+                The high upfront costs of manufacturing equipment, facility setup, and inventory required careful financial planning and strategic supplier relationships to maintain cash flow stability.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Skilled Workforce</h3>
+              <p className="text-gray-300">
+                Finding and training qualified solar technicians in a specialized field demanded significant investment in training programs and partnerships with technical institutions.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Regulatory Compliance</h3>
+              <p className="text-gray-300">
+                Navigating South Africa's electrical safety regulations and industry standards required extensive documentation, testing, and certification processes to ensure every product meets legal requirements.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Market Education</h3>
+              <p className="text-gray-300">
+                Many customers face confusion about solar technology, installation processes, and ROI timelines. We invested in customer education to build trust and demonstrate genuine value.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-amber-500/20 rounded-xl p-6 hover:border-amber-500/50 transition-all">
+              <h3 className="text-xl font-semibold text-amber-400 mb-3">Grid Integration</h3>
+              <p className="text-gray-300">
+                Connecting solar installations to municipal grids involves complex approval processes with local authorities. We built relationships with municipalities to streamline installations for our customers.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
