@@ -73,47 +73,124 @@
             background: rgba(0,0,0,0.2);
         }
         
-        .chain-flow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 3rem;
+        .supply-chain-title {
+            text-align: center;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.5rem;
         }
         
-        .chain-step {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 20px;
+        .supply-chain-subtitle {
             text-align: center;
-            min-width: 180px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 3rem;
+        }
+        
+        .chain-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
             position: relative;
         }
         
-        .chain-step::after {
-            content: '→';
+        .chain-timeline::before {
+            content: '';
             position: absolute;
-            right: -30px;
             top: 50%;
+            left: 60px;
+            right: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--solar-orange), var(--solara-gold), var(--solar-orange));
             transform: translateY(-50%);
-            font-size: 2rem;
-            color: var(--solar-orange);
+            z-index: 0;
         }
         
-        .chain-step:last-child::after {
+        .chain-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 30px rgba(255,107,53,0.4);
+            border: 3px solid var(--deep-space);
+        }
+        
+        .step-content {
+            background: rgba(255,255,255,0.08);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            width: 100%;
+            max-width: 200px;
+        }
+        
+        .step-content h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--solar-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-content p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.5;
+        }
+        
+        .step-connector {
             display: none;
+        }
+        
+        @media (max-width: 900px) {
+            .chain-timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .chain-timeline::before {
+                top: 40px;
+                bottom: 40px;
+                left: 50%;
+                right: auto;
+                width: 4px;
+                height: auto;
+                transform: translateX(-50%);
+            }
+            
+            .chain-step {
+                flex-direction: row;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .step-icon-wrapper {
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+            
+            .step-content {
+                text-align: left;
+                max-width: none;
+            }
         }
         
         @media (max-width: 768px) {
             .map-container {
                 grid-template-columns: 1fr;
-            }
-            .chain-step::after {
-                content: '↓';
-                right: 50%;
-                top: 100%;
-                transform: translateX(50%);
             }
         }
     </style>
@@ -142,13 +219,14 @@
     </nav>
     
     <main id="main-content">
-    <section class="locations-hero">
+    <section class="locations-hero" style="background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1920&h=600&fit=crop'); background-size: cover; background-position: center;">
         <h1 style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2rem,5vw,3.5rem);">Strategic Locations</h1>
         <p>From China's factories to South Africa's sunniest desert to your doorstep.</p>
     </section>
     
     <section class="map-container">
         <div class="location-detail northern-cape">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=200&fit=crop" alt="Upington Solar Farm" style="width:100%; height:200px; object-fit:cover; border-radius:16px; margin-bottom:1.5rem;">
             <div class="location-header">
                 <div class="location-icon">🏭</div>
                 <div>
@@ -167,6 +245,7 @@
         </div>
         
         <div class="location-detail gauteng">
+            <img src="https://images.unsplash.com/photo-1575373265358-313f7f29f03b?w=400&h=200&fit=crop" alt="Johannesburg" style="width:100%; height:200px; object-fit:cover; border-radius:16px; margin-bottom:1.5rem;">
             <div class="location-header">
                 <div class="location-icon">🏢</div>
                 <div>
@@ -186,29 +265,45 @@
     </section>
     
     <section class="supply-chain-viz">
-        <h2 style="text-align:center; font-family:'Space Grotesk',sans-serif; margin-bottom:1rem;">Global Supply Chain</h2>
-        <p style="text-align:center; color:rgba(255,255,255,0.7);">From Shanghai to your home</p>
+        <h2 class="supply-chain-title" style="font-family:'Space Grotesk',sans-serif;">Global Supply Chain</h2>
+        <p class="supply-chain-subtitle">From Shanghai to your home</p>
         
-        <div class="chain-flow">
+        <div class="chain-timeline">
             <div class="chain-step">
-                <div style="font-size:2rem; margin-bottom:0.5rem;">🇨🇳</div>
-                <h4>China</h4>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Shanghai/Shenzhen<br>Panel Manufacturing<br>Quality Testing</p>
+                <div class="step-icon-wrapper" style="background: linear-gradient(135deg, #e63946, #f4a261);">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=80&h=80&fit=crop" alt="China Manufacturing" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+                </div>
+                <div class="step-content">
+                    <h4>China</h4>
+                    <p>Shanghai/Shenzhen<br>Panel Manufacturing<br>Quality Testing</p>
+                </div>
             </div>
             <div class="chain-step">
-                <div style="font-size:2rem; margin-bottom:0.5rem;">🚢</div>
-                <h4>Port of Durban</h4>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Sea Freight<br>Customs Clearance<br>Import Handling</p>
+                <div class="step-icon-wrapper" style="background: linear-gradient(135deg, #1d3557, #457b9d);">
+                    <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=80&h=80&fit=crop" alt="Port of Durban" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+                </div>
+                <div class="step-content">
+                    <h4>Port of Durban</h4>
+                    <p>Sea Freight<br>Customs Clearance<br>Import Handling</p>
+                </div>
             </div>
             <div class="chain-step">
-                <div style="font-size:2rem; margin-bottom:0.5rem;">🏭</div>
-                <h4>Upington</h4>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Assembly Facility<br>Quality Control<br>Storage</p>
+                <div class="step-icon-wrapper" style="background: linear-gradient(135deg, #e76f51, #f4a261);">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=80&h=80&fit=crop" alt="Upington Facility" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+                </div>
+                <div class="step-content">
+                    <h4>Upington</h4>
+                    <p>Assembly Facility<br>Quality Control<br>Storage</p>
+                </div>
             </div>
             <div class="chain-step">
-                <div style="font-size:2rem; margin-bottom:0.5rem;">🏠</div>
-                <h4>Nationwide</h4>
-                <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Installation Teams<br>Maintenance<br>Support</p>
+                <div class="step-icon-wrapper" style="background: linear-gradient(135deg, #2a9d8f, #8ecae6);">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=80&h=80&fit=crop" alt="Nationwide Installation" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+                </div>
+                <div class="step-content">
+                    <h4>Nationwide</h4>
+                    <p>Installation Teams<br>Maintenance<br>Support</p>
+                </div>
             </div>
         </div>
     </section>

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SolaraForge</title>
-    <meta name="description" content="Learn about SolaraForge - how 10 students turned South Africa's energy crisis into a sustainable solution. Our story, mission, and vision.">
+    <meta name="description" content="Learn about SolaraForge - how 7 students turned South Africa's energy crisis into a sustainable solution. Our story, mission, and vision.">
     <meta name="keywords" content="solar company South Africa, about solar, load shedding solution, renewable energy startup">
     <meta property="og:title" content="About SolaraForge | Our Story">
-    <meta property="og:description" content="Born from crisis, built for hope. How 10 students turned South Africa's biggest problem into its brightest opportunity.">
+    <meta property="og:description" content="Born from crisis, built for hope. How 7 students turned South Africa's biggest problem into its brightest opportunity.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://solarforge.co.za/about.html">
@@ -91,6 +91,26 @@
             max-width: 400px;
             border: 1px solid rgba(255,107,53,0.3);
         }
+        
+        @media (max-width: 768px) {
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-right: 0;
+                padding-left: 50px;
+                justify-content: flex-start;
+            }
+            
+            .timeline-item:nth-child(even) {
+                padding-left: 50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,7 +139,7 @@
     <main id="main-content">
     <section class="about-hero">
         <h1>Our Story</h1>
-        <p>Born from crisis, built for hope. How 10 students turned South Africa's biggest problem into its brightest opportunity.</p>
+        <p>Born from crisis, built for hope. How 7 students turned South Africa's biggest problem into its brightest opportunity.</p>
     </section>
     
     <section class="story-section">
@@ -130,7 +150,7 @@
         <p>South Africa faces a perfect storm: daily <strong>load shedding</strong> (scheduled blackouts), <strong>rising electricity prices</strong>, and <strong>environmental damage</strong> from coal-based power generation. Families sit in darkness. Businesses lose revenue. The grid is failing.</p>
         
         <h2>🌱 The Solution</h2>
-        <p>We harness the Northern Cape's 2,500+ annual sun hours to deliver <strong>reliable, affordable, smart solar power</strong>. Our systems don't just reduce bills—they eliminate load shedding entirely.</p>
+        <p>We harness the Northern Cape's 2,500+ annual sun hours to deliver <strong>reliable, affordable, smart solar power</strong>. Our systems don't just reduce bills-they eliminate load shedding entirely.</p>
     </section>
     
     <section class="problem-grid">
@@ -153,7 +173,7 @@
         <div class="timeline-item">
             <div class="timeline-content">
                 <h4>2025</h4>
-                <p>Founded by 9 students as a group project. Identified the opportunity in South Africa's energy crisis.</p>
+                <p>Founded by 7 students as a group project. Identified the opportunity in South Africa's energy crisis.</p>
             </div>
         </div>
         <div class="timeline-item">

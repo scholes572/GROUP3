@@ -169,17 +169,31 @@ nav {
 
 .team-orbit {
     position: relative;
-    width: 100%;
-    max-width: 500px;
+    width: 400px;
     height: 400px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbit-ring {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 2px dashed rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: rotate-ring 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate-ring {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .sun-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 100px;
     height: 100px;
     background: radial-gradient(circle, var(--solara-gold), var(--solar-orange));
@@ -198,8 +212,11 @@ nav {
 
 .team-member {
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 70px;
     height: 70px;
+    margin: -35px 0 0 -35px;
     background: linear-gradient(135deg, var(--nebula-blue), var(--solar-orange));
     border-radius: 50%;
     display: flex;
@@ -228,16 +245,14 @@ nav {
 .member-5 { animation: orbit5 20s linear infinite; }
 .member-6 { animation: orbit6 20s linear infinite; }
 .member-7 { animation: orbit7 20s linear infinite; }
-.member-8 { animation: orbit8 20s linear infinite; }
 
-@keyframes orbit1 { 0% { transform: rotate(0deg) translateX(180px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); } }
-@keyframes orbit2 { 0% { transform: rotate(45deg) translateX(180px) rotate(-45deg); } 100% { transform: rotate(405deg) translateX(180px) rotate(-405deg); } }
-@keyframes orbit3 { 0% { transform: rotate(90deg) translateX(180px) rotate(-90deg); } 100% { transform: rotate(450deg) translateX(180px) rotate(-450deg); } }
-@keyframes orbit4 { 0% { transform: rotate(135deg) translateX(180px) rotate(-135deg); } 100% { transform: rotate(495deg) translateX(180px) rotate(-495deg); } }
-@keyframes orbit5 { 0% { transform: rotate(180deg) translateX(180px) rotate(-180deg); } 100% { transform: rotate(540deg) translateX(180px) rotate(-540deg); } }
-@keyframes orbit6 { 0% { transform: rotate(225deg) translateX(180px) rotate(-225deg); } 100% { transform: rotate(585deg) translateX(180px) rotate(-585deg); } }
-@keyframes orbit7 { 0% { transform: rotate(270deg) translateX(180px) rotate(-270deg); } 100% { transform: rotate(630deg) translateX(180px) rotate(-630deg); } }
-@keyframes orbit8 { 0% { transform: rotate(315deg) translateX(180px) rotate(-315deg); } 100% { transform: rotate(675deg) translateX(180px) rotate(-675deg); } }
+@keyframes orbit1 { 0% { transform: rotate(0deg) translateX(150px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); } }
+@keyframes orbit2 { 0% { transform: rotate(51.4deg) translateX(150px) rotate(-51.4deg); } 100% { transform: rotate(411.4deg) translateX(150px) rotate(-411.4deg); } }
+@keyframes orbit3 { 0% { transform: rotate(102.8deg) translateX(150px) rotate(-102.8deg); } 100% { transform: rotate(462.8deg) translateX(150px) rotate(-462.8deg); } }
+@keyframes orbit4 { 0% { transform: rotate(154.2deg) translateX(150px) rotate(-154.2deg); } 100% { transform: rotate(514.2deg) translateX(150px) rotate(-514.2deg); } }
+@keyframes orbit5 { 0% { transform: rotate(205.7deg) translateX(150px) rotate(-205.7deg); } 100% { transform: rotate(565.7deg) translateX(150px) rotate(-565.7deg); } }
+@keyframes orbit6 { 0% { transform: rotate(257.1deg) translateX(150px) rotate(-257.1deg); } 100% { transform: rotate(617.1deg) translateX(150px) rotate(-617.1deg); } }
+@keyframes orbit7 { 0% { transform: rotate(308.5deg) translateX(150px) rotate(-308.5deg); } 100% { transform: rotate(668.5deg) translateX(150px) rotate(-668.5deg); } }
 
 .hero-content {
     text-align: center;
@@ -350,24 +365,291 @@ h2::after {
     margin: 3rem 0;
 }
 
+/* Source Timeline - New Better UI */
+.source-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.source-timeline::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 12%;
+    right: 12%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--solar-orange), var(--solara-gold), var(--solar-orange), var(--solara-gold));
+    z-index: 0;
+}
+
+.source-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.source-img-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.source-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid var(--solar-orange);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.source-step:hover .source-img {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3);
+    border-color: var(--solara-gold);
+}
+
+.source-number {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 36px;
+    height: 36px;
+    background: var(--solar-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+    border: 3px solid var(--deep-space);
+}
+
+.source-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    transition: all 0.3s ease;
+}
+
+.source-step:hover .source-info {
+    background: rgba(255, 107, 53, 0.1);
+    border-color: var(--solar-orange);
+}
+
+.source-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    color: var(--solar-gold);
+    margin-bottom: 0.3rem;
+}
+
+.source-location {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.8rem;
+}
+
+.source-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.source-details li {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.3rem 0;
+}
+
+.source-arrow {
+    position: absolute;
+    right: -20px;
+    top: 80px;
+    font-size: 2rem;
+    color: var(--solar-orange);
+    z-index: 2;
+}
+
+.source-step:last-child .source-arrow {
+    display: none;
+}
+
+/* Mobile Responsive for Source Timeline */
+@media (max-width: 1024px) {
+    .source-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .source-timeline::before {
+        display: none;
+    }
+    
+    .source-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .source-timeline {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .source-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .source-info {
+        padding: 1rem;
+    }
+    
+    .source-info h3 {
+        font-size: 1rem;
+    }
+}
+
 .chain-flow {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    align-items: stretch;
+    gap: 0;
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    position: relative;
+}
+
+.chain-flow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--solar-orange), var(--solara-gold), var(--solar-orange));
+    transform: translateY(-50%);
+    z-index: 0;
 }
 
 .chain-step {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
-    min-width: 150px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
+    z-index: 1;
+    padding: 0 0.5rem;
+}
+
+.chain-step-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--deep-space);
+    box-shadow: 0 0 25px rgba(255, 107, 53, 0.5);
+    margin-bottom: 1rem;
     transition: all 0.3s;
-    touch-action: manipulation;
+}
+
+.chain-step:hover .chain-step-img {
+    transform: scale(1.1);
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.6);
+}
+
+.chain-step-content {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 1.25rem;
+    border-radius: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.chain-step-content strong {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--solar-gold);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.chain-step-content small {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .chain-flow {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .chain-flow::before {
+        top: 40px;
+        bottom: 40px;
+        left: 50%;
+        right: auto;
+        width: 4px;
+        height: auto;
+        transform: translateX(-50%);
+    }
+    
+    .chain-step {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+    }
+    
+    .chain-step-img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    
+    .chain-step-content {
+        text-align: left;
+        padding: 1rem;
+    }
+    
+    .locations-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .location-card img {
+        height: 150px;
+    }
+    
+    .location-header {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    
+    .location-body {
+        padding: 1rem;
+    }
+    
+    .location-body h3 {
+        font-size: 1rem;
+    }
+    
+    .location-body ul li {
+        font-size: 0.85rem;
+    }
 }
 
 @media (pointer: coarse) {
@@ -381,23 +663,8 @@ h2::after {
     }
 }
 
-.chain-step:hover {
-    background: rgba(255, 107, 53, 0.2);
-    transform: scale(1.05);
-}
-
-.chain-step::after {
-    content: '→';
-    position: absolute;
-    right: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: var(--solar-orange);
-}
-
-.chain-step:last-child::after {
-    display: none;
+.chain-step:hover .chain-step-content {
+    background: rgba(255, 107, 53, 0.15);
 }
 
 /* Locations Section */
@@ -419,6 +686,12 @@ h2::after {
 .location-card:hover {
     border-color: var(--solar-orange);
     transform: scale(1.02);
+}
+
+.location-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .location-header {
@@ -990,8 +1263,13 @@ footer {
 
     /* Team Orbit Section - Mobile */
     .team-orbit {
-        height: 280px;
-        max-width: 300px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .orbit-ring {
+        width: 260px;
+        height: 260px;
     }
 
     .sun-center {
@@ -1000,7 +1278,7 @@ footer {
         font-size: 0.6rem;
     }
 
-.team-member {
+    .team-member {
         width: 45px;
         height: 45px;
         font-size: 0.45rem;
@@ -1014,22 +1292,14 @@ footer {
     .member-5 { animation: orbit5 20s linear infinite; }
     .member-6 { animation: orbit6 20s linear infinite; }
     .member-7 { animation: orbit7 20s linear infinite; }
-    .member-8 { animation: orbit8 20s linear infinite; }
 
-    @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(90px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); } }
-    @keyframes orbit2 { 0% { transform: rotate(45deg) translateX(90px) rotate(-45deg); } 100% { transform: rotate(405deg) translateX(90px) rotate(-405deg); } }
-    @keyframes orbit3 { 0% { transform: rotate(90deg) translateX(90px) rotate(-90deg); } 100% { transform: rotate(450deg) translateX(90px) rotate(-450deg); } }
-    @keyframes orbit4 { 0% { transform: rotate(135deg) translateX(90px) rotate(-135deg); } 100% { transform: rotate(495deg) translateX(90px) rotate(-495deg); } }
-    @keyframes orbit5 { 0% { transform: rotate(180deg) translateX(90px) rotate(-180deg); } 100% { transform: rotate(540deg) translateX(90px) rotate(-540deg); } }
-    @keyframes orbit6 { 0% { transform: rotate(225deg) translateX(90px) rotate(-225deg); } 100% { transform: rotate(585deg) translateX(90px) rotate(-585deg); } }
-    @keyframes orbit7 { 0% { transform: rotate(270deg) translateX(90px) rotate(-270deg); } 100% { transform: rotate(630deg) translateX(90px) rotate(-630deg); } }
-    @keyframes orbit8 { 0% { transform: rotate(315deg) translateX(90px) rotate(-315deg); } 100% { transform: rotate(675deg) translateX(90px) rotate(-675deg); } }
-
-    .sun-center {
-        width: 60px;
-        height: 60px;
-        font-size: 0.5rem;
-    }
+    @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(110px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(110px) rotate(-360deg); } }
+    @keyframes orbit2 { 0% { transform: rotate(51.4deg) translateX(110px) rotate(-51.4deg); } 100% { transform: rotate(411.4deg) translateX(110px) rotate(-411.4deg); } }
+    @keyframes orbit3 { 0% { transform: rotate(102.8deg) translateX(110px) rotate(-102.8deg); } 100% { transform: rotate(462.8deg) translateX(110px) rotate(-462.8deg); } }
+    @keyframes orbit4 { 0% { transform: rotate(154.2deg) translateX(110px) rotate(-154.2deg); } 100% { transform: rotate(514.2deg) translateX(110px) rotate(-514.2deg); } }
+    @keyframes orbit5 { 0% { transform: rotate(205.7deg) translateX(110px) rotate(-205.7deg); } 100% { transform: rotate(565.7deg) translateX(110px) rotate(-565.7deg); } }
+    @keyframes orbit6 { 0% { transform: rotate(257.1deg) translateX(110px) rotate(-257.1deg); } 100% { transform: rotate(617.1deg) translateX(110px) rotate(-617.1deg); } }
+    @keyframes orbit7 { 0% { transform: rotate(308.5deg) translateX(110px) rotate(-308.5deg); } 100% { transform: rotate(668.5deg) translateX(110px) rotate(-668.5deg); } }
 
     .page-hero {
         padding: 120px 5% 40px;
@@ -1050,15 +1320,7 @@ footer {
     }
 
     .team-orbit {
-        height: 260px;
-        max-width: 280px;
-        margin-bottom: 2rem;
-    }
-
-    .team-member {
-        width: 45px;
-        height: 45px;
-        font-size: 0.5rem;
+        height: 280px;
     }
 
     .sun-center {
