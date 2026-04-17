@@ -4,7 +4,7 @@ import { Sun } from "lucide-react";
 const teamMembers = [
   "Clement",
   "Scholes",
-  "Sajeda",
+  "Sinthiya",
   "Abdullah",
   "Oscar",
   "Roba",

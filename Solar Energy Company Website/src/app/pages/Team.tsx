@@ -16,7 +16,7 @@ const teamMembers = [
     specialty: "Solar Engineering",
   },
   {
-    name: "Sajeda",
+    name: "Sinthiya",
     role: "Operations Director",
     description: "Manages manufacturing and quality control processes",
     specialty: "Operations Management",
