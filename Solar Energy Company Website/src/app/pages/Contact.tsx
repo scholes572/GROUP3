@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Clock, MessageSquare, CheckCircle } from "lucide-react";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function Contact() {
+  const [showSuccess, setShowSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,9 +16,20 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
-    alert("Thank you for your inquiry! We'll be in touch soon.");
+    setShowSuccess(true);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      location: "",
+      propertyType: "residential",
+      message: "",
+    });
+  };
+
+  const closeSuccess = () => {
+    setShowSuccess(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -287,7 +299,7 @@ export function Contact() {
               "Limpopo",
               "Mpumalanga",
               "North West",
-            ].map((province) => (
+            ].map((province ) => (
               <span
                 key={province}
                 className="px-4 py-2 bg-amber-500/20 border border-amber-500/30 rounded-full text-amber-300"
@@ -298,6 +310,36 @@ export function Contact() {
           </div>
         </motion.div>
       </div>
+
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={closeSuccess}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative bg-gradient-to-br from-gray-800 to-gray-900 border border-amber-500/30 rounded-2xl p-8 max-w-md w-full shadow-2xl shadow-amber-500/20"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-amber-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-amber-400 mb-2">Request Sent!</h3>
+              <p className="text-gray-300 mb-6">
+                Thank you for your inquiry! We'll be in touch soon.
+              </p>
+              <button
+                onClick={closeSuccess}
+                className="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-gray-900 font-semibold rounded-lg transition-all"
+              >
+                Close
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }
